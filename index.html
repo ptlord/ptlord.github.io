@@ -241,6 +241,21 @@
         line-height: 1.45;
       }
 
+      sup a {
+        color: var(--accent-strong);
+        font-size: 0.75em;
+        text-decoration: none;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-weight: 600;
+        vertical-align: super;
+      }
+
+      sup a:hover { color: var(--warm); }
+
+      .source-note [id] {
+        scroll-margin-top: 16px;
+      }
+
       .source-note {
         margin-top: 52px;
         padding-top: 20px;
@@ -432,11 +447,11 @@
           </p>
 
           <p>
-            One useful example is Sam Brown, CPA, Inc., a small accounting firm in Troy, Ohio. According to a Thomson Reuters case study, the firm adopted AI-assisted tools for engagement letters, tax advisory planning, and audit analysis. The reported results are not science fiction: 30 minutes saved per engagement letter, five to six hours saved per audit, and five to six hours of partner time saved on complex advisory plans. Just as important, the firm says junior staff can now participate earlier in advisory work because AI-supported workflows help them extract data, compare options, and assemble client-ready plans for partner review.
+            One useful example is Sam Brown, CPA, Inc., a small accounting firm in Troy, Ohio. According to a Thomson Reuters case study, the firm adopted AI-assisted tools for engagement letters, tax advisory planning, and audit analysis. The reported results are not science fiction: 30 minutes saved per engagement letter, five to six hours saved per audit, and five to six hours of partner time saved on complex advisory plans. Just as important, the firm says junior staff can now participate earlier in advisory work because AI-supported workflows help them extract data, compare options, and assemble client-ready plans for partner review.<sup><a href="#note-1" id="ref-1">[1]</a></sup>
           </p>
 
           <p>
-            That is a modest example, but its modesty is the point. The operator economy will not only look like one-person billion-dollar companies. It may look like a local accounting practice that uses AI to shift from manual compliance work toward higher-margin advisory relationships. It may look like a solo lawyer who can process documents fast enough to take cases that previously required a larger staff. It may look like a three-person research firm that produces work once associated with a large consulting team.
+            That is a modest example, but its modesty is the point. The operator economy will not only look like one-person billion-dollar companies. It may look like a local accounting practice that uses AI to shift from manual compliance work toward higher-margin advisory relationships.<sup><a href="#note-2" id="ref-2">[2]</a></sup> It may look like a solo lawyer who can process documents fast enough to take cases that previously required a larger staff. It may look like a three-person research firm that produces work once associated with a large consulting team.<sup><a href="#note-3" id="ref-3">[3]</a></sup>
           </p>
 
           <p>
@@ -678,18 +693,20 @@
 
           <div class="source-note">
             <p><strong>Source notes</strong></p>
-            <p>
-              The Sam Brown, CPA, Inc. example is drawn from a
+            <p id="note-1">
+              <strong>[1]</strong> The Sam Brown, CPA, Inc. example is drawn from a
               <a href="https://tax.thomsonreuters.com/en/insights/case-studies/small-firm-big-leverage-sam-brown-cpa-inc-scales-advisory-and-streamlines-audits-with-ai">Thomson Reuters customer case study</a>.
               Because it is vendor-published, it should be treated as an illustrative example of the operator pattern rather than independent evidence of broad market impact.
             </p>
-            <p>
-              The productivity claims are independently supported by peer-reviewed research.
-              Xie and Choi (<a href="https://mitsloan.mit.edu/ideas-made-to-matter/how-generative-ai-can-make-accountants-more-productive">MIT Sloan / Stanford GSB, 2025</a>)
+            <p id="note-2">
+              <strong>[2]</strong> Xie and Choi (<a href="https://mitsloan.mit.edu/ideas-made-to-matter/how-generative-ai-can-make-accountants-more-productive">MIT Sloan / Stanford GSB, 2025</a>)
               analyzed 79 small and midsize accounting firms and found that AI-using accountants finalized
               monthly statements 7.5 days faster, supported 55% more clients per week, reported 21% higher
-              billable hours, and shifted 8.5% of their time from routine data entry to higher-value tasks.
-              Dell'Acqua et al. (<a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700">Harvard Business School / BCG, 2023</a>)
+              billable hours, and shifted 8.5% of their time from routine data entry to higher-value tasks
+              including advisory work.
+            </p>
+            <p id="note-3">
+              <strong>[3]</strong> Dell'Acqua et al. (<a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700">Harvard Business School / BCG, 2023</a>)
               found in a randomized controlled trial with 758 knowledge workers that AI users completed tasks
               25.1% faster with output rated 40% higher quality.
             </p>
