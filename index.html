@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Will Default to Concentration Unless We Build Something Different</title>
+    <meta
+      name="description"
+      content="An essay on why AI will default toward concentration unless institutions make portability, market access, worker power, and transition capacity real."
+    >
+    <meta name="author" content="AI Ecosystem">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Will Default to Concentration Unless We Build Something Different">
+    <meta
+      property="og:description"
+      content="Scenario B is not the optimistic prediction. It is the institutional project."
+    >
+    <meta name="twitter:card" content="summary">
+    <style>
+      :root {
+        --bg: #f7f6f1;
+        --paper: #fffdf8;
+        --ink: #20211f;
+        --muted: #63645f;
+        --line: #d8d5c9;
+        --accent: #1d6b5d;
+        --accent-strong: #0f4c43;
+        --warm: #a94d2a;
+        --mark: #f0d36a;
+        --max: 760px;
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          ui-serif,
+          Georgia,
+          Cambria,
+          "Times New Roman",
+          Times,
+          serif;
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      a {
+        color: var(--accent-strong);
+        text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+
+      a:hover {
+        color: var(--warm);
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .hero {
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(120deg, rgba(29, 107, 93, 0.12), transparent 38%),
+          linear-gradient(300deg, rgba(169, 77, 42, 0.1), transparent 42%),
+          var(--paper);
+      }
+
+      .hero-inner {
+        width: min(var(--max), calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 56px 0 42px;
+      }
+
+      .kicker {
+        margin: 0 0 18px;
+        color: var(--accent-strong);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        letter-spacing: 0;
+        line-height: 1.1;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: 4.85rem;
+        font-weight: 780;
+        text-wrap: balance;
+      }
+
+      .lede {
+        max-width: 670px;
+        margin: 28px 0 0;
+        color: #373833;
+        font-size: 1.32rem;
+        line-height: 1.62;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        margin-top: 28px;
+        color: var(--muted);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 0.92rem;
+      }
+
+      .article-shell {
+        width: min(var(--max), calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 42px 0 72px;
+      }
+
+      .thesis {
+        margin: 0 0 42px;
+        padding: 24px 26px;
+        border-left: 5px solid var(--accent);
+        background: var(--paper);
+        box-shadow: 0 1px 0 rgba(32, 33, 31, 0.04);
+      }
+
+      .thesis p {
+        margin: 0;
+        color: #30312d;
+        font-size: 1.08rem;
+      }
+
+      article p {
+        margin: 0 0 1.25em;
+      }
+
+      article h2 {
+        margin: 2.25em 0 0.7em;
+        color: #171815;
+        font-size: 1.95rem;
+        font-weight: 760;
+        text-wrap: balance;
+      }
+
+      article h2:first-child {
+        margin-top: 0;
+      }
+
+      .pull {
+        margin: 2.1em 0;
+        padding: 4px 0 4px 22px;
+        border-left: 4px solid var(--warm);
+        color: #2b2c28;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 1.6rem;
+        font-weight: 720;
+        line-height: 1.28;
+        text-wrap: balance;
+      }
+
+      .map {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 2rem 0 2.2rem;
+      }
+
+      .map-item {
+        min-height: 112px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .map-item strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--accent-strong);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.25;
+      }
+
+      .map-item span {
+        display: block;
+        color: var(--muted);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .source-note {
+        margin-top: 52px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        background: #ece9df;
+      }
+
+      .footer-inner {
+        width: min(var(--max), calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 24px 0;
+        color: var(--muted);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 680px) {
+        body {
+          font-size: 17px;
+          line-height: 1.68;
+        }
+
+        .hero-inner {
+          padding: 38px 0 30px;
+        }
+
+        h1 {
+          max-width: 100%;
+          font-size: 2.55rem;
+        }
+
+        h2 {
+          font-size: 1.48rem;
+        }
+
+        .lede {
+          font-size: 1.12rem;
+        }
+
+        .pull {
+          font-size: 1.24rem;
+        }
+
+        .article-shell {
+          padding: 30px 0 56px;
+        }
+
+        .thesis {
+          padding: 18px;
+        }
+
+        .map {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div class="hero-inner">
+          <p class="kicker">AI, institutions, and the middle class</p>
+          <h1>AI Will Default to Concentration Unless We Build Something Different</h1>
+          <p class="lede">
+            The hopeful AI economy is possible. But the historical pattern of enabling technology is that capability spreads faster than ownership.
+          </p>
+          <div class="meta" aria-label="Article metadata">
+            <span>Essay</span>
+            <span>Published as a standalone HTML edition</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-shell">
+        <aside class="thesis" aria-label="Thesis">
+          <p>
+            Scenario B is not the optimistic prediction. It is the institutional project.
+          </p>
+        </aside>
+
+        <article>
+          <p>
+            The historical pattern of powerful enabling technologies is concentration. Railroads, electricity, telecommunications, software, the internet, cloud computing, smartphones, social platforms, and open-source infrastructure all expanded access in some ways while also creating new centers of economic power.
+          </p>
+
+          <p>AI is likely to follow the same pattern unless something structural changes.</p>
+
+          <p>
+            This essay is the harder companion to the more hopeful vision in
+            <a href="Building%20the%20AI-Empowered%20Middle%20Class.md">Building the AI-Empowered Middle Class</a>.
+            That vision is worth taking seriously: AI lowers coordination costs. Small teams gain capabilities once reserved for large organizations. More people become builders, owners, creators, and operators. The middle class becomes less dependent on traditional employment and more capable of creating value directly.
+          </p>
+
+          <p>That future is possible. But it is not the default.</p>
+
+          <p>
+            So the important question is not whether AI can empower ordinary people. It can. The harder question is what would prevent most of the gains from being captured by the organizations that already control data, compute, distribution, capital, procurement, and institutional trust.
+          </p>
+
+          <p>
+            This is the missing piece in much of the public AI debate. We keep asking whether AI will take jobs, as if the future turns on a simple substitution question: human or machine. But the more important question is about economic structure. When AI increases productive capacity, who captures that capacity? Who gains bargaining power? Who gains ownership? Who becomes more replaceable, and who becomes more capable?
+          </p>
+
+          <p>The answer will not be the same for everyone.</p>
+
+          <p>
+            It is tempting to describe the AI economy as a choice between two futures. In one future, AI becomes the engine of the algorithmic enterprise: more measurement, more optimization, more pressure, more dependency, and more concentration. In the other, AI amplifies small teams: more entrepreneurship, more leverage, more experimentation, and more distributed ownership.
+          </p>
+
+          <p>
+            But these futures will not arrive as a clean either-or choice. They will happen simultaneously. The same AI economy can produce a logistics worker managed by increasingly precise productivity software, a mid-career analyst whose job is compressed into a smaller team, a consultant who uses AI to serve ten clients alone, a startup that reaches global customers with five people, and a platform that captures the market created by thousands of small operators.
+          </p>
+
+          <p>
+            The question is not which scenario exists. Both will exist. The question is who lands in which scenario, why, and in what proportions.
+          </p>
+
+          <p>
+            If the majority of people experience AI through monitoring, benchmark pressure, job compression, and dependency, then the existence of a smaller class of successful AI entrepreneurs will not amount to a broadly empowered middle class. The ratio matters.
+          </p>
+
+          <h2>The Creator Economy Is Proof and Warning</h2>
+
+          <p>
+            The smartphone and social platforms are often treated as evidence that technology can democratize production. That evidence is real. A person with a phone can now record video, edit it, publish globally, find an audience, and earn income in ways that once required studios, distributors, equipment, and professional gatekeepers.
+          </p>
+
+          <p>That is a profound expansion of capability.</p>
+
+          <p>
+            But the creator economy is also a warning. Open access to production and distribution did not produce an evenly distributed creator middle class. It produced a power-law economy. A small number of creators captured enormous upside. A much larger number earned supplemental income, competed for algorithmic attention, or subsidized platform growth with unpaid or underpaid labor.
+          </p>
+
+          <p>
+            The platform provided the marketplace. The platform also controlled discovery, monetization, rules, reputation, and the relationship with the audience.
+          </p>
+
+          <p>
+            That is the central lesson for the proposed operator economy. AI may allow millions of people to create services, products, automations, applications, media, research, and businesses that were previously impossible for small teams. But if access to customers, payments, reputation, compute, distribution, and procurement is controlled by a handful of platforms, the result may look less like broad ownership and more like a new tournament economy.
+          </p>
+
+          <p>The creator economy proves that capability can be democratized. It does not prove that wealth will be.</p>
+
+          <h2>The Linux Lesson</h2>
+
+          <p>Linux is an even more important precedent for AI because it separates openness from distribution.</p>
+
+          <p>
+            Linux was open. It was powerful. It reduced dependence on proprietary operating systems. It enabled vast innovation and became the foundation of modern computing infrastructure. And yet the greatest economic gains were not captured by ordinary users or small contributors. They were captured by cloud providers, hyperscalers, enterprise software companies, device manufacturers, and platform businesses that could build commercial layers on top of the open foundation.
+          </p>
+
+          <p>Linux improved competition. It did not solve distribution.</p>
+
+          <p>
+            That distinction matters because many AI debates assume that openness is enough. Open models, open weights, open tools, and open protocols may be necessary, but they are not sufficient. Open technology can still produce concentrated outcomes when the scarce complements are controlled elsewhere.
+          </p>
+
+          <p>
+            Those complements include compute, proprietary data, distribution, customer relationships, capital, talent, regulatory access, enterprise trust, and integration with existing workflows. If AI is open but compute is expensive, distribution is platform-controlled, capital flows to incumbents, and customers buy through existing procurement channels, then openness alone will not create an AI-empowered middle class.
+          </p>
+
+          <p>The question is not simply whether the technology is accessible. The question is whether the full economic stack is accessible.</p>
+
+          <h2>What an Operator Looks Like</h2>
+
+          <p>
+            The operator economy is not pure theory. It is already beginning to appear, though unevenly and often inside ordinary professional services rather than glamorous startups.
+          </p>
+
+          <p>
+            One useful example is Sam Brown, CPA, Inc., a small accounting firm in Troy, Ohio. According to a Thomson Reuters case study, the firm adopted AI-assisted tools for engagement letters, tax advisory planning, and audit analysis. The reported results are not science fiction: 30 minutes saved per engagement letter, five to six hours saved per audit, and five to six hours of partner time saved on complex advisory plans. Just as important, the firm says junior staff can now participate earlier in advisory work because AI-supported workflows help them extract data, compare options, and assemble client-ready plans for partner review.
+          </p>
+
+          <p>
+            That is a modest example, but its modesty is the point. The operator economy will not only look like one-person billion-dollar companies. It may look like a local accounting practice that uses AI to shift from manual compliance work toward higher-margin advisory relationships. It may look like a solo lawyer who can process documents fast enough to take cases that previously required a larger staff. It may look like a three-person research firm that produces work once associated with a large consulting team.
+          </p>
+
+          <p>
+            The same example also shows the constraint. Sam Brown still rents AI capability from a vendor, still depends on the accounting credential system for trust, and still reaches clients through existing professional channels. The technology expands what the firm can do, but the firm's economic power still depends on access to tools, customers, reputation, and institutional legitimacy.
+          </p>
+
+          <p>
+            The economic question is whether these operators get to own the customer relationship, build durable reputation, and capture the margin created by their new leverage. If they simply rent intelligence from one platform, find customers through another, accept payments through a third, and depend on a fourth for reputation, then the operator may be productive without being powerful.
+          </p>
+
+          <p>That is the difference between being AI-enabled and being AI-empowered.</p>
+
+          <h2>The Machinery of Concentration</h2>
+
+          <p>To design a more distributed AI economy, we first have to name the mechanisms that push toward concentration.</p>
+
+          <p>
+            The first is compute. Frontier AI requires massive infrastructure. Even when smaller models become more capable, the organizations with the best compute access can train, deploy, subsidize, and bundle AI more aggressively than smaller competitors. Compute becomes a strategic input, not merely a technical resource.
+          </p>
+
+          <p>
+            The second is data. AI improves when it has access to context, usage patterns, enterprise workflows, customer interactions, and proprietary records. Large platforms already sit inside email, documents, cloud systems, payment flows, search, advertising, commerce, and developer workflows. Their products become better as they observe more activity. More users create more data; more data improves the product; a better product attracts more users; more users deepen the moat.
+          </p>
+
+          <p>
+            The third is workflow lock-in. Traditional software stores files. AI agents may store memory, preferences, processes, commitments, relationships, and institutional patterns. The more useful an agent becomes, the harder it may be to leave. That dependency is not automatically harmful. Electricity, internet access, databases, and email all create dependency because they create value. The danger is defensive lock-in: users stay not because the product remains best, but because exit is too painful.
+          </p>
+
+          <p>
+            The fourth is distribution control. Small operators need customers. If customer discovery is controlled by search engines, social platforms, app stores, cloud marketplaces, enterprise procurement portals, or payment networks, then operators may create value while platforms govern access to demand. The hardest part of entrepreneurship is often not production. It is distribution. AI may reduce the cost of production faster than it reduces the cost of finding trustworthy customers.
+          </p>
+
+          <p>
+            The fifth is capital and risk. People with savings, networks, credentials, and family support can take entrepreneurial risks more easily. People without those buffers cannot. If the AI economy rewards those who can experiment repeatedly, absorb failure, and wait for returns, it will amplify existing inequality unless transition support exists.
+          </p>
+
+          <p>
+            The sixth is trust. Customers, investors, and institutions often prefer known brands, elite credentials, major cities, established vendors, and familiar networks. AI may let a small team perform like a larger firm, but trust does not become automatic. Without new trust mechanisms, many capable operators will remain invisible.
+          </p>
+
+          <p>
+            The seventh is regulatory capture. AI regulation may be necessary, but complex compliance can favor incumbents. Large firms can afford legal teams, audits, certifications, lobbying, and compliance infrastructure. Small operators often cannot. Poorly designed regulation can protect the public while also freezing the market around existing giants.
+          </p>
+
+          <p>
+            The countermeasure is not deregulation. It is proportional regulation: tiered compliance regimes based on risk and scale, regulatory sandboxes for small operators, shared compliance utilities, public-interest representation inside AI rulemaking bodies, and safe-harbor pathways for low-risk experimentation. Rules should become stricter as systems become more consequential, more autonomous, and more widely deployed. They should not require a three-person firm to carry the same compliance burden as a global platform.
+          </p>
+
+          <p>
+            These seven mechanisms matter because concentration is not a mood. It is machinery. If we do not know where the machinery is, we cannot build counter-machinery.
+          </p>
+
+          <h2>AI Agency Is Not Just a Skill Problem</h2>
+
+          <p>
+            "AI agency" is a better goal than "AI literacy." AI literacy means knowing how to use the tools. AI agency means being able to identify opportunities, direct intelligence, coordinate systems, create value, and capture enough of that value to build a durable life.
+          </p>
+
+          <p>
+            But there is a hard problem here. Those capabilities already resemble executive and entrepreneurial skills. They are unevenly distributed. They correlate with education, confidence, social capital, domain knowledge, financial cushion, and tolerance for risk. AI may make these capabilities more powerful. That does not automatically make them more widely available.
+          </p>
+
+          <p>
+            To make AI agency broad rather than elite, society has to build systems that help people cross the gap from tool use to opportunity creation. That means practice environments, guided apprenticeships, domain-specific operator training, real customer projects, low-risk experimentation, portable credentials, health and income buffers, trusted communities, and local support networks.
+          </p>
+
+          <p>
+            The goal is not to tell every worker to become an entrepreneur overnight. The goal is to create realistic pathways through which more people can gain leverage, bargaining power, ownership, and optionality.
+          </p>
+
+          <p>This is especially important for people already embedded in the existing economy.</p>
+
+          <p>
+            Consider a 42-year-old middle manager whose company adopts AI agents across planning, reporting, customer service, analytics, and internal operations. Their role may not disappear immediately. It may be compressed. They may manage more output with fewer people. They may be expected to use AI to deliver faster reports, tighter forecasts, better coordination, and more detailed measurement. Their judgment may still matter, but the organization may need fewer people in similar roles.
+          </p>
+
+          <p>
+            What are their options? They can try to become more productive inside the same enterprise. They can move to another employer facing similar pressures. They can become an independent consultant or operator. They can build a small AI-enabled service business. They can retrain into another domain.
+          </p>
+
+          <p>
+            Each path requires more than "AI skills." It requires time, savings, market knowledge, customer access, healthcare security, confidence, and a credible signal of competence. That is why the algorithmic enterprise is the path of least resistance. Large organizations already have the infrastructure, customers, data, compliance systems, and capital. Workers can be reorganized around AI faster than they can become independent operators.
+          </p>
+
+          <p>If society wants the operator path to be available to more than a fortunate minority, it has to solve the transition problem directly.</p>
+
+          <h2>Three Middle Classes, Not One</h2>
+
+          <p>
+            The phrase "AI-empowered middle class" cannot refer to only one population. There are at least three groups, and they need different things.
+          </p>
+
+          <p>
+            The first group is workers inside large organizations. Their problem is algorithmic management, job compression, surveillance, benchmark pressure, and loss of bargaining power. They need worker voice, transparency, limits on harmful measurement, retraining pathways, gain-sharing, and portable proof of skill.
+          </p>
+
+          <p>
+            The second group is independent professionals and small operators. Their problem is transition risk, customer access, trust, capital, and infrastructure. They need affordable AI tools, startup capital, marketplaces, portable reputation, communities, and business support.
+          </p>
+
+          <p>
+            The third group is small businesses and micro-teams. Their problem is competing with larger firms that have better data, compute, procurement access, compliance support, and distribution. They need shared infrastructure, procurement reform, cooperative buying power, compliance support, and access to enterprise-grade AI.
+          </p>
+
+          <p>A serious strategy has to address all three, but not pretend they are the same.</p>
+
+          <h2>The Five Pillars, Rebuilt Around Failure Modes</h2>
+
+          <p>
+            The five pillars of an AI-empowered society are still the right categories: education, AI infrastructure, capital, markets, and communities. But each pillar needs a mechanism, a provider, and a failure mode.
+          </p>
+
+          <p>
+            Education cannot mean generic AI training. It has to mean domain-specific agency: helping people use AI to solve real problems for real customers in fields they understand. Community colleges, universities, employers, unions, libraries, professional associations, operator schools, and local business groups can all provide parts of this. The failure mode is obvious: AI education becomes another credentialing market. Courses teach prompt tricks, certificates become gatekeeping tools, and the people who benefit most are already advantaged. The countermeasure is to tie education to practical portfolios, apprenticeships, customer projects, and portable proof of capability.
+          </p>
+
+          <p>
+            AI infrastructure cannot mean symbolic access to weak tools. It has to mean meaningful access to intelligence for real economic activity. Public institutions, cloud companies, open-source communities, libraries, schools, and local economic development agencies could all help provide it. The failure mode is that public AI access becomes a low-quality tier while powerful tools remain available only to large firms and wealthy users. The countermeasure is compute credits, strong open models, shared tooling, public-interest AI services, and interoperability standards that prevent dependency from becoming lock-in.
+          </p>
+
+          <p>
+            Capital cannot mean only venture funding for high-growth startups. It has to fund experimentation and transition. Public loan programs, community banks, credit unions, revenue-based financing groups, foundations, workforce agencies, and local governments all have a role. The failure mode is that AI capital flows to people who already have assets, credentials, and investor networks. The countermeasure is small-scale financing for tools, compute, training time, business formation, and early customer acquisition. AI-enabled self-employment and micro-enterprise should be treated as legitimate economic development, not merely lifestyle business.
+          </p>
+
+          <p>
+            Markets cannot be an afterthought. The point is access to customers. Public procurement programs, enterprise marketplaces, local business networks, professional associations, trusted digital platforms, and cooperatives could all create demand pathways. The failure mode is that operators create value while platforms control discovery, reputation, pricing, payment, and customer relationships. The countermeasure is marketplaces with portable reputation, transparent fees, open standards, dispute resolution, and procurement pathways for small AI-enabled firms.
+          </p>
+
+          <p>
+            Communities and networks are not soft extras. They are how trust, mentorship, referrals, and belonging become economically useful. Guilds, unions, trade associations, local chambers, alumni networks, founder communities, and professional groups can connect people to opportunity. The failure mode is that AI opportunity clusters around existing elite networks. The countermeasure is local and sector-specific operator communities that connect training, customers, capital, mentors, and shared infrastructure.
+          </p>
+
+          <p>These pillars are not a wish list. They are the institutional stack required to turn AI capability into broad agency.</p>
+
+          <h2>Where Collective Action Actually Matters</h2>
+
+          <p>It is comforting to say, "We will decide."</p>
+
+          <p>
+            But the decisions that shape AI infrastructure are not evenly distributed. They are made by a small number of AI labs, cloud providers, chip manufacturers, enterprise software companies, large customers, investors, regulators, and governments. Ordinary people do not decide the future of AI by sentiment. They gain leverage through institutions.
+          </p>
+
+          <p>The strongest pressure points are the ones that touch the complements to AI, not just the models themselves.</p>
+
+          <p>
+            The first is portability. Interoperability standards, data portability requirements, and agent memory ownership matter because they determine whether users can leave a system without losing the accumulated intelligence of their own work. Without portability, useful agents become private infrastructure controlled by whoever learned the user first.
+          </p>
+
+          <p>
+            The second is market access. Public procurement rules, marketplace rules, transparent platform fees, and portable reputation systems matter because they determine whether small operators can reach customers without surrendering the customer relationship to a gatekeeper. Procurement may sound bureaucratic, but it is one of the most direct ways governments and large institutions can create demand for small AI-enabled firms.
+          </p>
+
+          <p>
+            The third is worker power inside large organizations. Protections around AI measurement, transparency requirements, and gain-sharing matter because many people will experience AI through employers, not entrepreneurship. If productivity gains inside firms flow only to capital, the operator economy can grow and still leave most workers with less bargaining power.
+          </p>
+
+          <p>
+            The fourth is transition capacity. Compute access programs, public funding for AI transition, support for open models, and public-interest infrastructure matter because they lower the cost of experimentation for people who cannot afford repeated failure. Education without transition support mostly benefits people who already have time, savings, and networks.
+          </p>
+
+          <p>
+            The question is not whether individuals feel empowered. The question is whether civic institutions, labor organizations, educators, policymakers, entrepreneurs, and local communities can build counterweights at the points where concentrated AI power becomes durable.
+          </p>
+
+          <h2>What Has to Be Different This Time</h2>
+
+          <p>If AI is going to produce a larger and stronger middle class, three structural changes matter more than the rest.</p>
+
+          <div class="map" aria-label="Three structural changes">
+            <div class="map-item">
+              <strong>Portability beyond files</strong>
+              <span>Agent memory, workflows, credentials, and reputation must be movable.</span>
+            </div>
+            <div class="map-item">
+              <strong>Plural market access</strong>
+              <span>Operators need many ways to reach customers without surrendering the relationship.</span>
+            </div>
+            <div class="map-item">
+              <strong>Financed transition</strong>
+              <span>People need time, training, healthcare security, experimentation capital, and early demand.</span>
+            </div>
+          </div>
+
+          <p>
+            First, portability has to reach beyond files. In the internet era, users could often export documents, contacts, or media, but the most valuable layers remained trapped: reputation, audience, discovery, workflow, and institutional trust. AI raises the stakes because agents may accumulate memory, preferences, routines, process knowledge, and work history. If those layers cannot move, competition weakens and users become dependent on whatever system learned them first. Portability for agent memory, workflows, credentials, and reputation is one of the clearest ways to prevent usefulness from becoming capture.
+          </p>
+
+          <p>
+            Second, market access has to be plural. The creator economy showed that production tools matter, but distribution decides who earns. A real operator economy needs more than AI tools; it needs many ways to reach customers. That means procurement pathways for small firms, portable reputation across marketplaces, transparent platform fees, cooperative demand networks, and local institutions that can certify trust. If one or two platforms become the default gateway to customers, the operator economy will inherit the creator economy's power-law structure.
+          </p>
+
+          <p>
+            Third, transition has to be financed. People cannot move from compressed employment into higher-agency work on inspiration alone. They need time, training, healthcare security, experimentation capital, and early customer access. Without that bridge, AI entrepreneurship will mostly be available to people who already have savings, networks, and low personal risk. A middle-class AI strategy therefore has to include transition capital, not just education.
+          </p>
+
+          <p>
+            These three changes are not sufficient for a perfectly fair economy. But they are the changes most likely to break the historical pattern seen in Linux and the creator economy. Open technology matters, but ownership follows the complements: reputation, customers, capital, trust, and the ability to leave one system for another.
+          </p>
+
+          <h2>What Success Would Look Like</h2>
+
+          <p>A more distributed AI economy in 2032 would not look like everyone founding a startup. It would look more ordinary than that, and more durable.</p>
+
+          <p>
+            A nurse with years of clinical experience might leave a hospital system gradually, not abruptly, because a local operator program helps her build a small care-coordination service for families managing chronic conditions. She has access to compliant AI tools, a small transition loan, a professional guild, portable credentials, and referral channels through community clinics. She does not need to become a venture-backed founder. She needs enough infrastructure to turn her domain knowledge into a trusted service.
+          </p>
+
+          <p>
+            A mid-career operations manager might build a three-person workflow consultancy for local manufacturers. AI helps the team map processes, write internal tools, analyze bottlenecks, produce training materials, and maintain client documentation. But the reason the business survives is not the model alone. It survives because regional procurement networks recognize the firm's credentials, customers can compare verified outcomes, and the team's reputation travels from one marketplace to another.
+          </p>
+
+          <p>
+            A small accounting firm might use AI to shift routine compliance work toward advisory services without surrendering the client relationship to a software platform. The firm still uses vendor tools, but its client history, workflow templates, reputation, and service records remain portable enough that switching vendors is possible. AI raises the firm's productive capacity without turning the firm into a captive distribution channel for someone else's platform.
+          </p>
+
+          <p>
+            Inside a large insurer, a claims team lead might help redesign an AI-assisted workflow that resolves routine cases faster while preserving human review for edge cases. In a healthier version of the AI economy, that productivity gain would not simply become a higher quota. The team would have a gain-sharing agreement, rights to understand how AI measurement affects promotion, scheduling, workload, or termination, and portable evidence of the workflows they helped improve. The intelligence they help create would not become an invisible asset owned only by the employer.
+          </p>
+
+          <p>
+            None of this is utopia. It is simply a version of the AI economy in which more people have exits, options, customers, and claims on the value they help create.
+          </p>
+
+          <p>That is the real meaning of an AI-empowered middle class.</p>
+
+          <p>
+            AI can expand human agency, but it will not do so by default. The historical pattern of enabling technology is that capability spreads faster than ownership. Many people gain access to tools. Far fewer gain durable control over markets, infrastructure, capital, and distribution.
+          </p>
+
+          <p>
+            The operator economy is possible, but without structural intervention it may become another power-law economy: millions participate, a small minority prosper, and platforms capture the durable upside.
+          </p>
+
+          <p>
+            The task, then, is not simply to teach people AI. It is to build the institutions that help ordinary people turn AI capability into bargaining power, market access, ownership, and resilience.
+          </p>
+
+          <p class="pull">Scenario B is not the optimistic prediction. It is the institutional project.</p>
+
+          <p class="source-note">
+            Source note: The Sam Brown, CPA, Inc. example is drawn from a
+            <a href="https://tax.thomsonreuters.com/en/insights/case-studies/small-firm-big-leverage-sam-brown-cpa-inc-scales-advisory-and-streamlines-audits-with-ai">Thomson Reuters customer case study</a>.
+            Because it is vendor-published, it should be treated as an illustrative example of the operator pattern rather than independent evidence of broad market impact.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>AI Ecosystem</span>
+      </div>
+    </footer>
+  </body>
+</html>
