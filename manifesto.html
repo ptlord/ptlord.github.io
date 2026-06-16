@@ -248,12 +248,25 @@
         line-height: 1.55;
       }
 
-      footer { border-top: 1px solid var(--line); background: #ece9df; }
+      .footer-visual {
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-visual img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      footer { background: #ece9df; }
 
       .footer-inner {
         width: min(var(--max), calc(100vw - 32px));
         margin: 0 auto;
-        padding: 24px 0;
+        padding: 20px 0;
         color: var(--muted);
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 0.9rem;
@@ -750,6 +763,9 @@
     </main>
 
     <footer>
+      <div class="footer-visual">
+        <img src="assets/image.png" alt="AI as an Amplifier of Human Agency — Millions of people. Limitless opportunities. Shared prosperity.">
+      </div>
       <div class="footer-inner">
         <span>Chin-Yew Lin</span>
         <a href="index.html">Companion essay →</a>
